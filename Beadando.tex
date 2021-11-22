@@ -3,16 +3,18 @@
 \usepackage[magyar]{babel}
 \usepackage{t1enc}
 \usepackage{tikz}
+\usepackage{xcolor}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usetheme{Berkeley}
 \usecolortheme{default}
+\definecolor{maroon}{rgb}{0.5, 0.0, 0.0}
+\definecolor{mathgreen}{HTML}{509600}
 %\setbeamercovered Nincs rá szükségünk
-\usepackage{subcaption}
-\newtheorem{tetel}{Tétel}
+%\newtheorem{tetel}{Tétel}
 
 \begin{document}
-	\author{Szabó András \& Sándor Máté}
+%	\author{Szabó András \& Sándor Máté}
 	\title{tikz \& pgfplots}
 	%\subtitle{Bevezetés a \TeX-be} Nincs rá szükségünk
 	\date{2021/22/I.\ félév}
@@ -52,38 +54,59 @@
 			\end{column}%
 		\end{columns}
 	\end{frame}
-
-\section{tikz}
-\subsection{tikz pelda}
-\begin{frame}{PROBA FRAME TIKZ}
-	\begin{columns}[T] % align columns
-		\begin{column}{.48\textwidth}
-			\color{gray}
-			
-			{\huge Left Part}
-			
-			\rule{\linewidth}{3pt}
-			
-			TODO-LEFT
-			
-			
-		\end{column}%
-		\hfill%
-		\begin{column}{.48\textwidth}
-			\color{blue}
-			
-			{\huge Right Part}
-			
-			
-			\rule{\linewidth}{3pt}
-			
-			TODO-RIGHT
-			
-			
-		\end{column}%
-	\end{columns}
-\end{frame}
-
+	
+	\section{Paragrafusok}
+	\subsection{Paragrafus txt-ből}
+	\begin{frame}{Paragrafus txt-ből}
+		\begin{columns}[T] % align columns
+			\begin{column}{.48\textwidth}
+				{\color{gray}
+				
+				{\huge PDF Nézet}
+				
+				\rule{\linewidth}{3pt}}
+				
+				\begin{tikzpicture}[scale=0.50]
+					\begin{axis}[
+						title={\LARGE TXT Paragrafus},
+						xlabel={$x$},
+						ylabel={$y$},
+						]
+						\addplot[blue]table {adat.txt};
+					\end{axis}
+				\end{tikzpicture}
+				
+				
+			\end{column}%
+			\hfill%
+			\begin{column}{.48\textwidth}
+				{\color{blue}
+				
+				{\huge \TeX \! Kód}
+				
+				\rule{\linewidth}{3pt}}
+				
+				{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
+				
+					{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
+					
+						title=TXT Paragrafus,
+						
+						xlabel=/{{\color{mathgreen}\$x\$}/},
+						
+						ylabel=/{{\color{mathgreen}\$x\$}/},]
+						
+						{\color{orange}\textbackslash addplot}[blue]table \{adat.txt\};
+						
+					{\color{orange}\quad\textbackslash end}\{axis\}
+					
+				\textbackslash end\{{\color{blue}tikzpicture}\}}}
+				
+				
+			\end{column}%
+		\end{columns}
+	\end{frame}
+	
 	
 	
 	
