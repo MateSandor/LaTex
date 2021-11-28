@@ -3,13 +3,15 @@
 \usepackage[magyar]{babel}
 \usepackage{t1enc}
 \usepackage{tikz}
+\usepackage{xcolor}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usetheme{Berkeley}
 \usecolortheme{default}
+\definecolor{maroon}{rgb}{0.5, 0.0, 0.0}
+\definecolor{mathgreen}{HTML}{509600}
 %\setbeamercovered Nincs rá szükségünk
-\usepackage{subcaption}
-\newtheorem{tetel}{Tétel}
+%\newtheorem{tetel}{Tétel}
 
 \begin{document}
 	\author{Szabó András \& Sándor Máté}
@@ -29,7 +31,7 @@
 			\begin{column}{.48\textwidth}
 				\color{gray}
 				
-				{\huge Left Part}
+				{\huge PDF Nézet}
 				
 				\rule{\linewidth}{3pt}
 				
@@ -41,7 +43,7 @@
 			\begin{column}{.48\textwidth}
 				\color{blue}
 				
-				{\huge Right Part}
+				{\huge \TeX \! Kód}
 				
 				
 				\rule{\linewidth}{3pt}
@@ -52,38 +54,164 @@
 			\end{column}%
 		\end{columns}
 	\end{frame}
+	
+	\section{Paragrafusok}
+	\subsection{Paragrafus txt-ből}
+	\begin{frame}{Paragrafus txt-ből}
+		\begin{columns}[T] % align columns
+			\begin{column}{.48\textwidth}
+				{\color{gray}
+				
+				{\huge PDF Nézet}
+				
+				\rule{\linewidth}{3pt}}
+				
+				\begin{tikzpicture}[scale=0.50]
+					\begin{axis}[
+						title={\LARGE TXT Paragrafus},
+						xlabel={$x$},
+						ylabel={$y$},
+						]
+						\addplot[blue]table {adat.txt};
+					\end{axis}
+				\end{tikzpicture}
+				
+				
+			\end{column}%
+			\hfill%
+			\begin{column}{.48\textwidth}
+				{\color{blue}
+				
+				{\huge \TeX \! Kód}
+				
+				\rule{\linewidth}{3pt}}
+				
+				{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
+				
+					{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
+					
+						title=TXT Paragrafus,
+						
+						xlabel={{\color{mathgreen}\$x\$}},
+						
+						ylabel={{\color{mathgreen}\$y\$}},]
+						
+						{\color{orange}\textbackslash addplot}[blue]table \{adat.txt\};
+						
+					{\color{orange}\quad\textbackslash end}\{axis\}
+					
+				\textbackslash end\{{\color{blue}tikzpicture}\}}}
+				
+				
+			\end{column}%
+		\end{columns}
+	\end{frame}
 
-\section{tikz}
-\subsection{tikz pelda}
-\begin{frame}{PROBA FRAME TIKZ}
-	\begin{columns}[T] % align columns
-		\begin{column}{.48\textwidth}
-			\color{gray}
-			
-			{\huge Left Part}
-			
-			\rule{\linewidth}{3pt}
-			
-			TODO-LEFT
-			
-			
-		\end{column}%
-		\hfill%
-		\begin{column}{.48\textwidth}
-			\color{blue}
-			
-			{\huge Right Part}
-			
-			
-			\rule{\linewidth}{3pt}
-			
-			TODO-RIGHT
-			
-			
-		\end{column}%
-	\end{columns}
-\end{frame}
+	\subsection{Négyzetfüggvény}
+		\begin{frame}{Négyzetfüggvény}
+		\begin{columns}[T] % align columns
+			\begin{column}{.48\textwidth}
+				\color{gray}
+				
+				{\huge PDF Nézet}
+				
+				\rule{\linewidth}{3pt}
+				
+				\begin{tikzpicture}[scale=0.50]
+					\begin{axis}[
+						title={\LARGE $x^2$ Gráf},
+						xlabel={$x$},
+						ylabel={$y$},
+						]
+						\addplot[blue,domain=-3:3] {x^2};
+					\end{axis}
+				\end{tikzpicture}
+				
+				
+			\end{column}%
+			\hfill%
+			\begin{column}{.48\textwidth}
+				{\color{blue}
+					
+					{\huge \TeX \! Kód}
+					
+					\rule{\linewidth}{3pt}}
+				
+				{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
+					
+					{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
+						
+						title={{\color{mathgreen}\$x \^\ 2\$}},
+						
+						xlabel={{\color{mathgreen}\$x\$}},
+						
+						ylabel={{\color{mathgreen}\$y\$}},]
+						
+						{\color{orange}\textbackslash addplot}[blue,domain=-3:3] \{x \^\ 2\};
+						
+						{\color{orange}\quad\textbackslash end}\{axis\}
+						
+						\textbackslash end\{{\color{blue}tikzpicture}\}}}
+				
+				
+			\end{column}%
+		\end{columns}
+	\end{frame}
 
+	\subsection{Több függvény egy ábrán}
+	\begin{frame}{Több függvény egy ábrán}
+		\begin{columns}[T] % align columns
+			\begin{column}{.48\textwidth}
+				\color{gray}
+				
+				{\huge PDF Nézet}
+				
+				\rule{\linewidth}{3pt}
+				
+				\begin{tikzpicture}[scale=0.50]
+					\begin{axis}[
+						title={\LARGE {\color{blue}$x^2$} és {\color{red}$x^3$} Gráf},
+						xlabel={$x$},
+						ylabel={$y$},
+						]
+						\addplot[blue,domain=-3:3] {x^2};
+						\addplot[red,domain=-3:3] {x^3};
+					\end{axis}
+				\end{tikzpicture}
+				
+				
+			\end{column}%
+			\hfill%
+			\begin{column}{.48\textwidth}
+				{\color{blue}
+				
+				{\huge \TeX \! Kód}
+				
+				\rule{\linewidth}{3pt}}
+			
+		{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
+		
+		{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
+			
+			title={{\color{mathgreen}\$x \^\ 2\$}},
+			
+			xlabel={{\color{mathgreen}\$x\$}},
+			
+			ylabel={{\color{mathgreen}\$y\$}},]
+			
+			{\color{orange}\textbackslash addplot}[blue,domain=-3:3] \{x \^\ 2\};
+			{\color{orange}\textbackslash addplot}[red,domain=-3:3] \{x \^\ 3\};
+			
+			{\color{orange}\quad\textbackslash end}\{axis\}
+			
+			\textbackslash end\{{\color{blue}tikzpicture}\}}}
+				
+				
+			\end{column}%
+		\end{columns}
+	\end{frame}
+
+	
 	
 	
 	
