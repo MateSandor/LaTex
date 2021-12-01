@@ -26,20 +26,20 @@
 	
 	%Egyenletek létrehozása a Tikz és Pgfplots segítségével
 	
-		
+	
 	
 	\section{A csomagról}
-
+	
 	\subsection{Beüzemelés}
-		\begin{frame}{Beüzemelés}
-			\includegraphics[height=5.35cm]{usepackage.png}
-		\end{frame}
+	\begin{frame}{Beüzemelés}
+		\includegraphics[height=5.35cm]{usepackage.png}
+	\end{frame}
 	
 	\section{Paragrafusok}
 	
-		\begin{frame}{TXT beolvasás}
-			\includegraphics[height=7cm]{adat.png}
-		\end{frame}
+	\begin{frame}{TXT beolvasás}
+		\includegraphics[height=7cm]{adat.png}
+	\end{frame}
 	
 	
 	\subsection{Paragrafus txt-ből}
@@ -47,10 +47,10 @@
 		\begin{columns}[T] % align columns
 			\begin{column}{.48\textwidth}
 				{\color{gray}
-				
-				{\huge PDF Nézet}
-				
-				\rule{\linewidth}{3pt}}
+					
+					{\huge PDF Nézet}
+					
+					\rule{\linewidth}{3pt}}
 				
 				\begin{tikzpicture}[scale=0.50]
 					\begin{axis}[
@@ -65,17 +65,18 @@
 				
 			\end{column}%
 			\hfill%
+			\onslide<2>
 			\begin{column}{.48\textwidth}
 				{\color{blue}
-				
-				{\huge \TeX \! Kód}
-				
-				\rule{\linewidth}{3pt}}
+					
+					{\huge \TeX \! Kód}
+					
+					\rule{\linewidth}{3pt}}
 				
 				{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
-				
-					{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
 					
+					{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
+						
 						title=TXT Paragrafus,
 						
 						xlabel={{\color{mathgreen}\$x\$}},
@@ -84,17 +85,17 @@
 						
 						{\color{orange}\textbackslash addplot}[blue]table \{adat.txt\};
 						
-					{\color{orange}\quad\textbackslash end}\{axis\}}
+						{\color{orange}\quad\textbackslash end}\{axis\}}
 					
-				\textbackslash end\{{\color{blue}tikzpicture}\}}
+					\textbackslash end\{{\color{blue}tikzpicture}\}}
 				
 				
 			\end{column}%
 		\end{columns}
 	\end{frame}
-
+	
 	\subsection{Négyzetfüggvény}
-		\begin{frame}{Négyzetfüggvény}
+	\begin{frame}{Négyzetfüggvény}
 		\begin{columns}[T] % align columns
 			\begin{column}{.48\textwidth}
 				\color{gray}
@@ -103,22 +104,23 @@
 				
 				\rule{\linewidth}{3pt}
 				
-			 \begin{tikzpicture}[scale=0.50]
-				\begin{axis}[
-					title={\LARGE $x^2$ Parabola},
-					xlabel={$x$},
-					ylabel={$y$},
-					axis lines = left,
-					yticklabel pos=upper,
-					xticklabel pos=upper,
-					]
-					\addplot[blue,domain=-4:2] {(x+1)^2};
-				\end{axis}
-			\end{tikzpicture}
+				\begin{tikzpicture}[scale=0.50]
+					\begin{axis}[
+						title={\LARGE $x^2$ Parabola},
+						xlabel={$x$},
+						ylabel={$y$},
+						axis lines = left,
+						yticklabel pos=upper,
+						xticklabel pos=upper,
+						]
+						\addplot[blue,domain=-4:2] {(x+1)^2};
+					\end{axis}
+				\end{tikzpicture}
 				
 				
 			\end{column}%
 			\hfill%
+			\onslide<2>
 			\begin{column}{.48\textwidth}
 				{\color{blue}
 					
@@ -140,18 +142,18 @@
 						
 						xticklabel pos=upper,
 						yticklabel pos=upper,]
-												
+						
 						{\color{orange}\textbackslash addplot}[blue,domain=\\-4:2] \{(x+1) \^\ 2\};
 						
 						{\color{orange}\quad\textbackslash end}\{axis\}}
-						
-						\textbackslash end\{{\color{blue}tikzpicture}\}}
+					
+					\textbackslash end\{{\color{blue}tikzpicture}\}}
 				
 				
 			\end{column}%
 		\end{columns}
- 	\end{frame}
-
+	\end{frame}
+	
 	\subsection{Több függvény egy ábrán}
 	\begin{frame}{Több függvény egy ábrán}
 		\begin{columns}[T] % align columns
@@ -179,91 +181,93 @@
 				
 			\end{column}%
 			\hfill%
+			\onslide<2>
 			\begin{column}{.48\textwidth}
 				{\color{blue}
+					
+					{\huge \TeX \! Kód}
+					
+					\rule{\linewidth}{3pt}}
 				
-				{\huge \TeX \! Kód}
-				
-				\rule{\linewidth}{3pt}}
-			
-		{\scriptsize{}{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
-				
-				{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
-					
-					title={{\color{mathgreen}\$x \^\ 2\$}},
-					
-					xlabel={{\color{mathgreen}\$x\$}},
-					
-					ylabel={{\color{mathgreen}\$y\$}},
-					
-					{\quad yticklabel axis line = left,}
-					{\quad yticklabel pos=upper,}
-					{\quad xticklabel pos=upper,}]
-					
-					{\color{orange}\textbackslash addplot}[blue,domain=-3:3] \{x \^\ 2\};
-					{\color{orange}\textbackslash addplot}[red,domain=-3:3] \{x \^\ 3\};
-					
-					{\color{orange}\quad\textbackslash end}\{axis\}}
-					
-					\textbackslash end\{{\color{blue}tikzpicture}\}}}
+				{\scriptsize{}{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
+						
+						{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
+							
+							title={{\color{mathgreen}\$x \^\ 2\$}},
+							
+							xlabel={{\color{mathgreen}\$x\$}},
+							
+							ylabel={{\color{mathgreen}\$y\$}},
+							
+							{\quad yticklabel axis line = left,}
+							{\quad yticklabel pos=upper,}
+							{\quad xticklabel pos=upper,}]
+							
+							{\color{orange}\textbackslash addplot}[blue,domain=-3:3] \{x \^\ 2\};
+							{\color{orange}\textbackslash addplot}[red,domain=-3:3] \{x \^\ 3\};
+							
+							{\color{orange}\quad\textbackslash end}\{axis\}}
+						
+						\textbackslash end\{{\color{blue}tikzpicture}\}}}
 				
 				
 			\end{column}%
 		\end{columns}
 	\end{frame}
 	
-		\subsection{Sin(x) függvény}
-		\begin{frame}{Sin(x) függvény}
-			\begin{columns}[T] % align columns
-				\begin{column}{.48\textwidth}
-					\color{gray}
+	\subsection{Sin(x) függvény}
+	\begin{frame}{Sin(x) függvény}
+		\begin{columns}[T] % align columns
+			\begin{column}{.48\textwidth}
+				\color{gray}
+				
+				{\huge PDF Nézet}
+				
+				\rule{\linewidth}{3pt}
+				
+				\begin{tikzpicture}[scale=0.50]
+					\begin{axis}[
+						title={\LARGE $sin(x)$ függvény},
+						xlabel={$x$},
+						ylabel={$y$},
+						axis lines = left,
+						yticklabel pos=upper,
+						xticklabel pos=upper,
+						]
+						\addplot[blue,domain=-360:360] {sin(x)};
+					\end{axis}
+				\end{tikzpicture}
+				
+				
+			\end{column}%
+			\hfill%
+			\onslide<2>
+			\begin{column}{.48\textwidth}
+				{\color{blue}
 					
-					{\huge PDF Nézet}
+					{\huge \TeX \! Kód}
 					
-					\rule{\linewidth}{3pt}
-					
-					\begin{tikzpicture}[scale=0.50]
-						\begin{axis}[
-							title={\LARGE $sin(x)$ függvény},
-							xlabel={$x$},
-							ylabel={$y$},
-							axis lines = left,
-							yticklabel pos=upper,
-							xticklabel pos=upper,
-							]
-							\addplot[blue,domain=-360:360] {sin(x)};
-						\end{axis}
-					\end{tikzpicture}
-					
-					
-				\end{column}%
-				\hfill%
-				\begin{column}{.48\textwidth}
-					{\color{blue}
+					\rule{\linewidth}{3pt}}
+				
+				{\footnotesize{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
 						
-						{\huge \TeX \! Kód}
-						
-						\rule{\linewidth}{3pt}}
-					
-					{\footnotesize{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
+						{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
 							
-							{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
-								
-								{\quad axis lines=left,}
-								
-								{\quad yticklabel pos=upper,}
-								
-								{\quad xticklabel pos=upper,}
-								]
+							{\quad axis lines=left,}
+							
+							{\quad yticklabel pos=upper,}
+							
+							{\quad xticklabel pos=upper,}
+							]
 							{\quad \color{orange}\textbackslash addplot}[blue,domain=\{\quad -360:360] {sin(x)};
-						
-						{\color{orange}\quad\textbackslash end}\{axis\}}
+							
+							{\color{orange}\quad\textbackslash end}\{axis\}}
 						
 						\textbackslash end\{{\color{blue}tikzpicture}\}}}
-			
-			
-		\end{column}%
-	\end{columns}
+				
+				
+			\end{column}%
+		\end{columns}
 	\end{frame}
 	
 	\subsection{Jelmagyarázat}
@@ -292,6 +296,7 @@
 				
 			\end{column}%
 			\hfill%
+			\onslide<2>
 			\begin{column}{.48\textwidth}
 				{\color{blue}
 					
@@ -313,14 +318,15 @@
 							{\quad \color{orange}\textbackslash addplot}[blue,domain=\\{\quad 0:5,triangle*] \{2x\};}
 							
 							{\color{orange}\quad\textbackslash end}\{axis\}}
-							
-							\textbackslash end\{{\color{blue}tikzpicture}\}}}
+						
+						\textbackslash end\{{\color{blue}tikzpicture}\}}}
 				
 				
 			\end{column}%
 		\end{columns}
 	\end{frame}
-
+	
+	\subsection{Háromdimenziós koordináta-rendszer}
 	\begin{frame}{Háromdimenziós koordináta-rendszer}
 		\begin{columns}[T] % align columns
 			\begin{column}{.48\textwidth}
@@ -345,6 +351,7 @@
 				
 			\end{column}%
 			\hfill%
+			\onslide<2>
 			\begin{column}{.48\textwidth}
 				{\color{blue}
 					
@@ -360,8 +367,8 @@
 						{\color{orange}\textbackslash addplot}3 coordinates \{(0,1,0) (0.5,1,1) (1,1,0)\};
 						
 						{\color{orange}\quad\textbackslash end}\{axis\}}
-						
-						\textbackslash end\{{\color{blue}tikzpicture}\}}
+					
+					\textbackslash end\{{\color{blue}tikzpicture}\}}
 				
 				
 			\end{column}%
@@ -369,9 +376,8 @@
 	\end{frame}
 	
 	
-	\section{Paragrafusok}
-	\subsection{Paragrafus txt-ből}
-	\begin{frame}{Háromdimenziós koordináta-rendszer}
+	\subsection{Exponenciális függvény}
+	\begin{frame}{Exponenciális függvény}
 		\begin{columns}[T] % align columns
 			\begin{column}{.48\textwidth}
 				{\color{gray}
@@ -390,6 +396,7 @@
 				
 			\end{column}%
 			\hfill%
+			\onslide<2>
 			\begin{column}{.48\textwidth}
 				{\color{blue}
 					
@@ -402,8 +409,8 @@
 					{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}
 						
 						{\color{orange}\textbackslash addplot3} [surf,fill=white,domain=\\-2:2] \{exp(-x \^\ 2-y \^\ 2)\};
-					
-					{\color{orange}\quad\textbackslash end}\{axis\}}
+						
+						{\color{orange}\quad\textbackslash end}\{axis\}}
 					
 					\textbackslash end\{{\color{blue}tikzpicture}\}}
 				
