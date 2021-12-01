@@ -28,8 +28,15 @@
 	
 		
 	
-	\section{Paragrafusok}
+	\section{A csomagról}
 
+	\subsection{Beüzemelés}
+		\begin{frame}{Beüzemelés}
+			\includegraphics[height=5.35cm]{usepackage.png}
+		\end{frame}
+	
+	\section{Paragrafusok}
+	
 		\begin{frame}{TXT beolvasás}
 			\includegraphics[height=7cm]{adat.png}
 		\end{frame}
@@ -77,9 +84,9 @@
 						
 						{\color{orange}\textbackslash addplot}[blue]table \{adat.txt\};
 						
-					{\color{orange}\quad\textbackslash end}\{axis\}
+					{\color{orange}\quad\textbackslash end}\{axis\}}
 					
-				\textbackslash end\{{\color{blue}tikzpicture}\}}}
+				\textbackslash end\{{\color{blue}tikzpicture}\}}
 				
 				
 			\end{column}%
@@ -136,9 +143,9 @@
 												
 						{\color{orange}\textbackslash addplot}[blue,domain=\\-4:2] \{(x+1) \^\ 2\};
 						
-						{\color{orange}\quad\textbackslash end}\{axis\}
+						{\color{orange}\quad\textbackslash end}\{axis\}}
 						
-						\textbackslash end\{{\color{blue}tikzpicture}\}}}
+						\textbackslash end\{{\color{blue}tikzpicture}\}}
 				
 				
 			\end{column}%
@@ -196,9 +203,9 @@
 					{\color{orange}\textbackslash addplot}[blue,domain=-3:3] \{x \^\ 2\};
 					{\color{orange}\textbackslash addplot}[red,domain=-3:3] \{x \^\ 3\};
 					
-					{\color{orange}\quad\textbackslash end}\{axis\}
+					{\color{orange}\quad\textbackslash end}\{axis\}}
 					
-					\textbackslash end\{{\color{blue}tikzpicture}\}}}}
+					\textbackslash end\{{\color{blue}tikzpicture}\}}}
 				
 				
 			\end{column}%
@@ -247,12 +254,12 @@
 								{\quad yticklabel pos=upper,}
 								
 								{\quad xticklabel pos=upper,}
-								]}
-							{\quad \color{orange}\textbackslash addplot}[blue,domain=\{\quad -360:360] {sin(x)};}
+								]
+							{\quad \color{orange}\textbackslash addplot}[blue,domain=\{\quad -360:360] {sin(x)};
 						
-						{\color{orange}\quad\textbackslash end}\{axis\}
+						{\color{orange}\quad\textbackslash end}\{axis\}}
 						
-						\textbackslash end\{{\color{blue}tikzpicture}}\}
+						\textbackslash end\{{\color{blue}tikzpicture}\}}}
 			
 			
 		\end{column}%
@@ -299,20 +306,110 @@
 							
 							{\quad grid=major}
 							
-							{\quad legend entries={\$x\_2=2\$, \\ \quad \$x\_2=4\$}}
+							{\quad legend entries=\{{\color{mathgreen}\$x\_2=2\$, \\ \quad \$x\_2=4\$}\}}
 							\\{\quad ]}\\
 							{\quad \color{orange}\textbackslash addplot}[blue,domain=\\{\quad 0:5,mark=*] \{x\};}
 							
 							{\quad \color{orange}\textbackslash addplot}[blue,domain=\\{\quad 0:5,triangle*] \{2x\};}
 							
-							{\color{orange}\quad\textbackslash end}\{axis\}
+							{\color{orange}\quad\textbackslash end}\{axis\}}
 							
-							\textbackslash end\{{\color{blue}tikzpicture}\}}}}
+							\textbackslash end\{{\color{blue}tikzpicture}\}}}
 				
 				
 			\end{column}%
 		\end{columns}
 	\end{frame}
 
+	\begin{frame}{Háromdimenziós koordináta-rendszer}
+		\begin{columns}[T] % align columns
+			\begin{column}{.48\textwidth}
+				{\color{gray}
+					
+					{\huge PDF Nézet}
+					
+					\rule{\linewidth}{3pt}}
+				
+				\begin{tikzpicture}[scale=0.55]
+					\begin{axis}[
+						title={\LARGE XYZ koordinátarendszer},
+						xlabel={$x$},
+						ylabel={$y$},
+						zlabel={$z$},
+						]
+						\addplot3 coordinates {(0,0,0) (0,0.5,1) (0,1,0)};
+						\addplot3 coordinates {(0,1,0) (0.5,1,1) (1,1,0)};
+					\end{axis}
+				\end{tikzpicture}
+				
+				
+			\end{column}%
+			\hfill%
+			\begin{column}{.48\textwidth}
+				{\color{blue}
+					
+					{\huge \TeX \! Kód}
+					
+					\rule{\linewidth}{3pt}}
+				
+				{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
+					
+					{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}[
+						
+						{\color{orange}\textbackslash addplot}3 coordinates \{(0,0,0) (0,0.5,1) (0,1,0)\};
+						{\color{orange}\textbackslash addplot}3 coordinates \{(0,1,0) (0.5,1,1) (1,1,0)\};
+						
+						{\color{orange}\quad\textbackslash end}\{axis\}}
+						
+						\textbackslash end\{{\color{blue}tikzpicture}\}}
+				
+				
+			\end{column}%
+		\end{columns}
+	\end{frame}
+	
+	
+	\section{Paragrafusok}
+	\subsection{Paragrafus txt-ből}
+	\begin{frame}{Háromdimenziós koordináta-rendszer}
+		\begin{columns}[T] % align columns
+			\begin{column}{.48\textwidth}
+				{\color{gray}
+					
+					{\huge PDF Nézet}
+					
+					\rule{\linewidth}{3pt}}
+				
+				\begin{tikzpicture}[scale=0.6]
+					\begin{axis}[title=exp($-x^2-y^2$)]
+						\addplot3 [surf,fill=white,domain=-2:2] {exp(-x^2-y^2)};
+					\end{axis}
+				\end{tikzpicture}
+				
+				
+				
+			\end{column}%
+			\hfill%
+			\begin{column}{.48\textwidth}
+				{\color{blue}
+					
+					{\huge \TeX \! Kód}
+					
+					\rule{\linewidth}{3pt}}
+				
+				{\color{cyan}\textbackslash begin\{{\color{blue}tikzpicture}\}
+					
+					{\color{maroon}\quad {\color{orange} \textbackslash begin}\{axis\}
+						
+						{\color{orange}\textbackslash addplot3} [surf,fill=white,domain=\\-2:2] \{exp(-x \^\ 2-y \^\ 2)\};
+					
+					{\color{orange}\quad\textbackslash end}\{axis\}}
+					
+					\textbackslash end\{{\color{blue}tikzpicture}\}}
+				
+				
+			\end{column}%
+		\end{columns}
+	\end{frame}
 	
 \end{document}
